@@ -1,4 +1,4 @@
-go 1.20
+go 1.21.0
 
 use .
 
@@ -23,3 +23,5 @@ use ./nstop
 use ./nupdate
 
 use ./del
+
+use ./middleman

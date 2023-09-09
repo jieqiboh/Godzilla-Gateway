@@ -29,7 +29,6 @@ import (
 	"{{ .GatewayName }}/constants"
 	"log"
 	"strings"
-	"fmt"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/client/genericclient"
 	"github.com/cloudwego/kitex/pkg/generic"
@@ -83,7 +82,6 @@ func {{ .ServiceName }}GenericClient() genericclient.Client {
 	// Method template
 	methodTemplate := `
 func Do{{ title .MethodName }}(ctx context.Context, cli genericclient.Client, req string) (interface{}, error) {
-	fmt.Print(req)
 	resp, err := cli.GenericCall(ctx, "{{ .MethodName }}", req)
 
 	if err != nil {

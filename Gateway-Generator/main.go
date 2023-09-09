@@ -63,6 +63,9 @@ func main() {
 		}
 	}
 
+	create.CreatePSI(allhandlers)
+	create.ConfigMid()
+
 	err = os.Chdir("gateway")
 	if err != nil {
 		log.Fatalf("move to directory folder failed with %s\n", err)
@@ -73,6 +76,7 @@ func main() {
 
 	//go mod tidy
 	hz_gen.Tidy()
+	hz_gen.Upgrade()
 
 	//build exe
 	hz_gen.Build(info.GatewayName)
